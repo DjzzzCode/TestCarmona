@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>{% block title %}Welcome!{% endblock %}</title>
+        {% block stylesheets %}
+        {{ encore_entry_link_tags('app') }}
+        <!-- Fonts --> 
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Lato&display=swap" rel="stylesheet">
+        
+        {% endblock %}
+    </head>
+    <body>
+        <div class="wrapper">
+            <header>
+                <h3>Client Storage</h3>
+                <nav>
+                    
+                    <ul>
+                        <li><a href="/ClientStorage/public/">Show list</a></li>
+                        <li><a href="/ClientStorage/public/new">Create new</a></li>
+                    </ul>
+                </nav>
+            </header>
+            {% block body %}{% endblock %}
+        </div>
+        
+        {% block javascripts %}{% endblock %}
+    </body>
+</html>

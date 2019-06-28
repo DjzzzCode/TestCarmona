@@ -1,0 +1,34 @@
+{% extends 'base.html.twig' %}
+{% block title %} Client Storage {% endblock %}
+{% block body %}
+    
+    <article>
+    {% if Clients %}
+        <table class="Client">
+            <th>Firstname</th>
+            <th>Lastname</th>
+            <th>Birthday</th>
+            <th>Email</th>
+            <th>Phone number</th>
+        {% for client in Clients %}
+            
+                <tr>
+                    <td>{{ client.FirstName }}</td>
+                    <td>{{ client.LastName }}</td>
+                    <td>{{ client.Birth|date("m/d/Y") }}</td>
+                    <td>{{ client.Email }}</td>
+                    <td>{{ client.Phone }}</td>
+                </tr>
+            
+        {% endfor %}
+        </table>
+    {% else %}
+        <article>
+        <div class="notfy">
+            <p>There are no client in the database yet!</p>
+            <p>You need to add them before we can show the table.</p>
+        </div>
+    <article>
+    {% endif %}
+    </article>
+{% endblock %}
